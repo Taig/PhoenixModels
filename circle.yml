@@ -1,0 +1,24 @@
+machine:
+  java:
+    version: oraclejdk8
+
+dependencies:
+  pre:
+    - wget -q https://dl.bintray.com/sbt/debian/sbt-0.13.13.deb
+    - sudo dpkg -i sbt-0.13.13.deb
+  cache_directories:
+    - ~/.ivy2
+    - ~/.sbt
+  override:
+    - sbt +test:compile
+
+general:
+  artifacts:
+    - target/scala-2.11/coverage-report
+    - target/scala-2.12/coverage-report
+
+test:
+  override:
+    - sbt ";clean;coverage;+test;coverageReport;coverageAggregate"
+  post:
+    - bash <(curl -s https://codecov.io/bash)
