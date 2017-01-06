@@ -1,6 +1,7 @@
-package io.taig.phoenix.models
+package io.taig.phoenix
 
 import io.circe.Json
+import io.taig.phoenix.models.{ Event, Inbound, Response, Topic }
 
 import scala.language.higherKinds
 
