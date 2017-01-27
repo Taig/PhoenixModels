@@ -20,7 +20,7 @@ javacOptions ++= {
 }
 
 libraryDependencies ++=
-    List( "core", "generic" ).map( id ⇒ "io.circe" %% s"circe-$id" % "0.6.1" ) :::
+    List( "core", "generic" ).map( id ⇒ "io.circe" %% s"circe-$id" % "0.7.0" ) :::
     "org.scalatest" %% "scalatest" % "3.0.1" % "test" ::
     Nil
 
